@@ -1,3 +1,25 @@
+//
+// Adventure: Revisited
+//
+// C++ Version Copyright (c) 2006 Peter Hirschberg
+//
+// Typescript Version Copyright (c) 2019 Peter Hirschberg
+//
+// This was pretty much a 1:1 port of my C++ version.
+// As such this code is very "C style" and I apologize for that. :-)
+//
+// peter@peterhirschberg.com
+// http://peterhirschberg.com
+//
+// Big thanks to Joel D. Park and others for annotating the original Adventure decompiled assembly code.
+// I relied heavily and deliberately on that commented code.
+//
+// Original Adventure(c) game Copyright (c) 1980 ATARI, INC.
+// Any trademarks referenced herein are the property of their respective holders.
+// 
+// Original game written by Warren Robinett. Warren, you rock.
+//
+
 import * as CONSTS from './constants'
 import {Platform_PaintPixel} from './platform'
 import {Platform_ReadJoystick} from './platform'
