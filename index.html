@@ -1,20 +1,44 @@
 <html>
   <head>
     <script src="dist/bundle.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <style type=text/css>
       body {
         background-color: black;
+        color: #0040a0;
+        font-family: "Open Sans";
+      }
+      p {
+        font-size: 14px;
+      }
+      a {
+        color: #0040a0;
       }
       #canvas {
         width: 640px;
         height: 384px;
       }
+      .instructions {
+        width: 640px;
+        text-align: left;
+      }
     </style>
   </head>
   <body>
     <center>
-      <br><br>
+      <h2>Adventure: Revisited</h2>
       <canvas id="canvas" width="320" height="192"></canvas>
+      <div class="instructions">
+        <p>
+          CONTROLS:<br>
+          "1" - Reset<br>
+          "2" - Select<br>
+          Arrow Keys - Movement<br>
+          Spacebar - Drop Carried Item<br>
+          <br>
+          You can also <a href="../instructions.htm">read the original instructions for the game</a>. Read more about my port <a href="../">here</a>.
+        </p>
+      </div>
     </center>
   </body>
 </html>
