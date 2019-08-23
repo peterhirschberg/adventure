@@ -12,7 +12,30 @@ let keyUp = false
 let keyDown = false
 let keyFire = false
 
+let soundPickup: any
+let soundPutdown: any
+let soundRoar: any
+let soundDragonDie: any
+let soundEaten: any
+let soundWon: any
+
 export function start() {
+
+  // Set up the sounds
+  soundPickup = new Audio('./sounds/pickup.wav')
+  soundPutdown = new Audio('./sounds/putdown.wav')
+  soundRoar = new Audio('./sounds/roar.wav')
+  soundDragonDie = new Audio('./sounds/dragondie.wav')
+  soundEaten = new Audio('./sounds/eaten.wav')
+  soundWon = new Audio('./sounds/won.wav')
+
+  // preload the sounds
+  soundPickup.addEventListener('loadeddata', () => {}) 
+  soundPutdown.addEventListener('loadeddata', () => {}) 
+  soundRoar.addEventListener('loadeddata', () => {}) 
+  soundDragonDie.addEventListener('loadeddata', () => {}) 
+  soundEaten.addEventListener('loadeddata', () => {}) 
+  soundWon.addEventListener('loadeddata', () => {}) 
 
   // Set up the canvas for drawing
   canvas = <HTMLCanvasElement> document.getElementById("canvas")
@@ -137,7 +160,26 @@ export function Platform_ReadDifficultySwitches() : any {
 }
 
 export function Platform_MakeSound(sound: number) {
-
+  switch (sound) {
+    case CONSTS.SOUND_PICKUP:
+      soundPickup.play()
+      break
+    case CONSTS.SOUND_PUTDOWN:
+      soundPutdown.play()
+      break
+    case CONSTS.SOUND_ROAR:
+      soundRoar.play()
+      break
+    case CONSTS.SOUND_DRAGONDIE:
+      soundDragonDie.play()
+      break
+    case CONSTS.SOUND_EATEN:
+      soundEaten.play()
+      break
+    case CONSTS.SOUND_WON:
+      soundWon.play()
+      break
+  }
 }
 
 export function Platform_Random() : number {
