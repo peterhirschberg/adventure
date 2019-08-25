@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 export function onRoomColorChanged(color: COLOR) {
   // Make the page elements match the current room color
-  let colorstr = 'rgba(' + color.r + ',' + color.g + ',' + color.b + ', 255)'
+  let colorstr = 'rgba(' + color.r + ',' + color.g + ',' + color.b + ', 1)'
   body.style.color = colorstr
   instructions.style.border = '1px solid ' + colorstr
   links.forEach((link:any) => {
