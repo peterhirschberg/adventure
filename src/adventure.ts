@@ -28,6 +28,7 @@ import {Platform_ReadSelectSwitch} from './platform'
 import {Platform_ReadDifficultySwitches} from './platform'
 import {Platform_MakeSound} from './platform'
 import {Platform_Random} from './platform'
+import {Platform_RoomColor} from './platform'
 import {JOYSTICK} from './platform'
 
 // Some consts
@@ -68,7 +69,7 @@ interface BALL {
     hitObject: number              // the object that the ball hit
 }
 
-interface COLOR {
+export interface COLOR {
     r: number
     g: number
     b: number
@@ -1699,6 +1700,9 @@ function PrintDisplay()
     // get the playfield color
     let color: COLOR = ((gameState == GAMESTATE_WIN) && (winFlashTimer > 0)) ? GetFlashColor() : colorTable[currentRoom.color];
     let colorBackground: COLOR = colorTable[COLOR_LTGRAY]
+
+    // Let the platform know the current room color
+    Platform_RoomColor(color)
 
     // Fill the entire backbuffer with the playfield background color before we draw anything else
     Platform_PaintPixel(colorBackground.r, colorBackground.g, colorBackground.b, 0, 0, CONSTS.ADVENTURE_SCREEN_WIDTH, CONSTS.ADVENTURE_TOTAL_SCREEN_HEIGHT);

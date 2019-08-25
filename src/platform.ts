@@ -1,5 +1,7 @@
 import * as CONSTS from './constants'
 import {Adventure_Run} from './adventure'
+import {onRoomColorChanged} from './index'
+import {COLOR} from './adventure'
 
 let canvas : HTMLCanvasElement
 let ctx : any
@@ -18,6 +20,8 @@ let soundRoar: any
 let soundDragonDie: any
 let soundEaten: any
 let soundWon: any
+
+let lastColor: COLOR = {r:0, g:0, b:0}
 
 export function start() {
 
@@ -171,6 +175,8 @@ export function Platform_MakeSound(sound: number) {
       soundRoar.play()
       break
     case CONSTS.SOUND_DRAGONDIE:
+      soundRoar.pause()
+      soundRoar.currentTime = 0.0
       soundDragonDie.play()
       break
     case CONSTS.SOUND_EATEN:
@@ -184,4 +190,12 @@ export function Platform_MakeSound(sound: number) {
 
 export function Platform_Random() : number {
   return Math.random()
+}
+
+export function Platform_RoomColor(color: COLOR) {
+  // Hook and debounce room color changes
+  if (color != lastColor) {
+    lastColor = color
+    onRoomColorChanged(color)
+  }
 }
