@@ -2,38 +2,11 @@
   <head>
     <script src="dist/bundle.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <style type=text/css>
-      body {
-        background-color: black;
-        color: #0040a0;
-        font-family: "Open Sans";
-      }
-      p {
-        font-size: 14px;
-        margin: 0;
-        padding: 0;
-      }
-      a {
-        color: #0040a0;
-      }
-      #canvas {
-        width: 640px;
-        height: 384px;
-      }
-      .instructions {
-        box-sizing: border-box;
-        width: 640px;
-        text-align: left;
-        border: 1px solid #0040a0;
-        border-radius: 8px;
-        padding: 8px;
-        margin-top: 8px;
-      }
-    </style>
+    <link href='./css/adventure.css' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <center>
-      <h2>Adventure: Revisited</h2>
+      <h2 class="heading">Adventure: Revisited</h2>
       <canvas id="canvas" width="320" height="192"></canvas>
       <div class="instructions">
         <p>
@@ -45,6 +18,9 @@
           <br>
           You can also <a href="../instructions.htm">read the original instructions for the game</a>. Read more about my port <a href="../">here</a>.
         </p>
+        <center>
+          <button><strong>Full Screen</strong></button>
+        </center>
       </div>
     </center>
   </body>

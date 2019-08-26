@@ -1,0 +1,49 @@
+
+body {
+    background-color: black;
+    color: #0040a0;
+    font-family: "Open Sans";
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+p {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #0040a0;
+}
+button {
+    margin-top: 8px;
+    color: #0040a0;
+    background-color: transparent;
+    border: 2px solid #0040a0;
+    border-radius: 4px;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+#canvas {
+    width: 640px;
+    height: 384px;
+}
+.instructions {
+    box-sizing: border-box;
+    width: 640px;
+    text-align: left;
+    border: 1px solid #0040a0;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 8px;
+}
+body.fullscreen .instructions {
+    display: none;
+}
+body.fullscreen .heading {
+    display: none;
+}
+body.fullscreen #canvas {
+    width: auto;
+    height: 100vh;
+}
